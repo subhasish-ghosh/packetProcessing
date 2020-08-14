@@ -30,7 +30,7 @@ public:
         }
     }
 
-    void step(std::vector<uint8_t>);
+    void step(std::vector<uint8_t> &);
 
     static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t type);
 
@@ -38,9 +38,12 @@ public:
 
     ssize_t get_dataLen(void);
 
+    std::string get_name(void);
+
 private:
     static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYPOWER;
     static const ssize_t datalen = 16;
+    inline static const std::string name = "Battery Power";
     static bool objInit;
     static CDP_BatteryPower *cdpBatteryPower;
 

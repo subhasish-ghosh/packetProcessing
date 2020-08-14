@@ -22,11 +22,13 @@ public:
 
     typedef CDP_BatteryPackets *(*getPacketObjFuncPtr_t)(CDP_BatteryPackets::CDP_BatteryPacketsType);
 
-    virtual void step(std::vector<uint8_t>) = 0;
+    virtual void step(std::vector<uint8_t> &) = 0;
 
     virtual CDP_BatteryPacketsType get_type(void) = 0;
 
     virtual ssize_t get_dataLen(void) = 0;
+
+    virtual std::string get_name(void) = 0;
 };
 
 

@@ -4,8 +4,12 @@
 
 #include "CDP_BatteryPower.h"
 
-void CDP_BatteryPower::step(std::vector<uint8_t> data) {
+void CDP_BatteryPower::step(std::vector<uint8_t> & data) {
 
+}
+
+std::string CDP_BatteryPower::get_name(void) {
+    return name;
 }
 
 CDP_BatteryPower::CDP_BatteryPacketsType CDP_BatteryPower::get_type(void) {

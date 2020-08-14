@@ -10,6 +10,8 @@
 #include <fstream>
 #include "CDP_BatteryLogger.h"
 
+#define CDP_PACKETLEN_MAX   (UINT32_MAX/UINT8_MAX)
+
 class CDP_BatteryParser : public CDP_BatteryLogger {
 
 public:
