@@ -15,7 +15,7 @@ void CDP_BatteryParser::run(std::string fileName) {
         fp.open(fileName.c_str(), std::ios::binary);
     }
     catch (...) {
-        obj.cdp_err("File Open Error");
+        obj.cdp_err("CDP_BatteryParser: File Open Error");
         throw;
     }
     obj.cdp_dbg("File Open Successful");
@@ -61,11 +61,12 @@ void CDP_BatteryParser::run(std::string fileName) {
                     errsum = errsum % (UINT8_MAX + 1); //TODO:: need to check why without +1 it worked sometimes
                     if (errsum != errval) {
                         obj.cdp_err("Packet Data Error..Ignoring, Type: ", batObj->get_name(), " expected: ",
-                                        errsum, " received err: ", reinterpret_cast<int *> (errval));
+                                    std::uppercase, std::hex, std::showbase, uint32_t(errsum), " received err: ",
+                                    uint32_t(errval));
                         continue;
                     } else {
                         obj.cdp_dbg("Packet Receive Success, Type: ", batObj->get_name(), " received err: ",
-                                        reinterpret_cast<int *> (errval)); //TODO:: need to remove reinterpret
+                                    std::uppercase, std::hex, std::showbase, uint32_t(errval));
                     }
                 }
 
@@ -76,13 +77,13 @@ void CDP_BatteryParser::run(std::string fileName) {
             batObj->step(data);
         }
     } catch (std::string str) {
-        obj.cdp_err(str);
+        obj.cdp_err("CDP_BatteryParser: ", str);
         throw;
     } catch (std::exception &e) {
-        obj.cdp_err(e.what());
+        obj.cdp_err("CDP_BatteryParser: ", e.what());
         throw;
     } catch (...) {
-        obj.cdp_err("parser failed due to unknown reasons");
+        obj.cdp_err("CDP_BatteryParser: failed due to unknown reasons");
         throw;
     }
 

@@ -22,8 +22,7 @@ CDP_BatteryPackets *CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_Bat
         log.cdp_err("CDP_BatteryFactory::getPacketObj failed: ", e.what());
         throw;
     } catch (...) {
-        log.cdp_err("CDP_BatteryFactory::getPacketObj failed");
+        log.cdp_err("CDP_BatteryFactory::getPacketObj failed due to unknown reasons");
         throw;
     }
-    return nullptr;
 }

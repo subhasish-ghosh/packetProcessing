@@ -3,16 +3,29 @@
 //
 
 #include <netinet/in.h>
+#include <chrono>
 #include "CDP_BatteryPower.h"
 
-void CDP_BatteryPower::step(std::vector<uint8_t> & data) {
+void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
-    format = (CDP_PacketFormat_t *) (&data[0]);
-    format->time = be32toh(format->time);
-    format->volt = be32toh(format->volt);
-    format->current = be64toh(format->current);
+    try {
+        format = (CDP_PacketFormat_t *) (&data[0]);
+        format->time = be32toh(format->time);
+        format->volt = be32toh(format->volt);
+        format->current = be64toh(format->current);
 
-    cdp_dbg("time: ", uint32_t(format->time), " volt: ", uint32_t(format->volt), " current: ", uint64_t(format->current));
+        cdp_dbg("time: ", uint32_t(format->time), " volt: ", uint32_t(format->volt), " current: ",
+                uint64_t(format->current));
+
+        /*cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
+                 strbattStatus[format->battStatus]);*/
+    } catch (std::exception &e) {
+        cdp_err("CDP_BatteryPower::step ", e.what());
+        throw;
+    } catch (...) {
+        cdp_err("CDP_BatteryPower::step failed due to unknown reasons");
+        throw;
+    }
 }
 
 std::string CDP_BatteryPower::get_name(void) {
@@ -28,6 +41,7 @@ ssize_t CDP_BatteryPower::get_dataLen(void) {
 }
 
 CDP_BatteryPackets *CDP_BatteryPower::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &typelocal) {
+    CDP_BatteryLogger log;
     try {
         if (type == typelocal) {
             if (false == objInit) {
@@ -40,10 +54,13 @@ CDP_BatteryPackets *CDP_BatteryPower::getObj(CDP_BatteryPackets::CDP_BatteryPack
         } else {
             return nullptr;
         }
+    } catch (std::exception &e) {
+        log.cdp_err("CDP_BatteryPower::getObj ", e.what());
+        throw;
     } catch (...) {
-
+        log.cdp_err("CDP_BatteryPower::getObj failed due to unknown reasons");
+        throw;
     }
-    return nullptr;
 }
 
 bool CDP_BatteryPower::objInit = false;

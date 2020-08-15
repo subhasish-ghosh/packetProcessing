@@ -7,13 +7,26 @@
 #include "CDP_BatteryStatus.h"
 
 void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
+    try {
+        format = (CDP_PacketFormat_t *) (&data[0]);
+        format->time = be32toh(format->time);
 
-    format = (CDP_PacketFormat_t *) (&data[0]);
-    format->time = be32toh(format->time);
-    cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
+        if (format->battStatus >= strbattStatus->size()) {
+            format->battStatus = 0;
+            cdp_err("Invalid Battery Status Received, assuming: ", strbattStatus[format->battStatus]);
+        }
 
-    cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
-             state[format->battStatus]);
+        cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
+
+        cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
+                 strbattStatus[format->battStatus]);
+    } catch(std::exception &e) {
+        cdp_err("CDP_BatteryStatus::step ", e.what());
+        throw;
+    } catch(...) {
+        cdp_err("CDP_BatteryStatus::step failed due to unknown reasons");
+        throw;
+    }
 }
 
 std::string CDP_BatteryStatus::get_name(void) {
@@ -29,18 +42,26 @@ ssize_t CDP_BatteryStatus::get_dataLen(void) {
 }
 
 CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &typelocal) {
-    if (type == typelocal) {
-        if (false == objInit) {
-            cdpBatteryStatus = new CDP_BatteryStatus();
-            objInit = true;
-            return cdpBatteryStatus;
+    CDP_BatteryLogger log;
+    try {
+        if (type == typelocal) {
+            if (false == objInit) {
+                cdpBatteryStatus = new CDP_BatteryStatus();
+                objInit = true;
+                return cdpBatteryStatus;
+            } else {
+                return cdpBatteryStatus;
+            }
         } else {
-            return cdpBatteryStatus;
+            return nullptr;
         }
-    } else {
-        return nullptr;
+    } catch(std::exception &e) {
+        log.cdp_err("CDP_BatteryStatus::getObj ", e.what());
+        throw;
+    } catch(...) {
+        log.cdp_err("CDP_BatteryStatus::getObj failed due to unknown reasons");
+        throw;
     }
-    return nullptr;
 }
 
 bool CDP_BatteryStatus::objInit = false;

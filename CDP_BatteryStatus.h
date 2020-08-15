@@ -51,7 +51,7 @@ private:
         uint8_t battStatus;
     } __attribute__((packed)) CDP_PacketFormat_t;
     static CDP_PacketFormat_t *format;
-    inline static const std::string state[] = {"VLOW",
+    inline static const std::string strbattStatus[] = {"VLOW",
                                                "LOW",
                                                "MED",
                                                "HIGH"};
