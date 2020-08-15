@@ -40,19 +40,32 @@ public:
 
     std::string get_name(void);
 
+    bool get_error(void);
+
 private:
-    static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYPOWER;
-    static const ssize_t datalen = 16;
+    inline static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYPOWER;
+    inline static const ssize_t datalen = 16;
     inline static const std::string name = "Battery Power";
-    static bool objInit;
-    static CDP_BatteryPower *cdpBatteryPower;
+    inline static bool objInit = false;
+    inline static bool stateErrorDetected = false;
+    inline static CDP_BatteryPower *cdpBatteryPower = nullptr;
     typedef struct {
         uint32_t time;
         uint32_t volt;
         uint64_t current;
     } __attribute__((packed)) CDP_PacketFormat_t;
-    static CDP_PacketFormat_t *format;
+    inline static CDP_PacketFormat_t *format = nullptr;
+    inline static uint32_t prevPowerState = 0;
+    inline static std::array mwattStateTable = {std::make_pair<uint64_t>(0, 200),
+                                                std::make_pair<uint64_t>(300, 450),
+                                                std::make_pair<uint64_t>(550, 650),
+                                                std::make_pair<uint64_t>(800, 1200)};
 
+    inline static std::array stateTable = {std::make_tuple(0, 1,"Starting"),
+                                           std::make_tuple(1, 2,"Warm up"),
+                                           std::make_tuple(2, 3,"Main Session"),
+                                           std::make_tuple(3, 2,"Cool down"),
+                                           std::make_tuple(2, 0,"Complete")};
     CDP_BatteryPower();
 
     CDP_BatteryPower(const CDP_BatteryPower &);

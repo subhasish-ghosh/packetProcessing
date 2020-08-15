@@ -30,6 +30,8 @@ public:
     virtual ssize_t get_dataLen(void) = 0;
 
     virtual std::string get_name(void) = 0;
+
+    virtual bool get_error(void) = 0;
 };
 extern std::map<CDP_BatteryPackets::CDP_BatteryPacketsType_t, CDP_BatteryPackets::getPacketObjFuncPtr_t> getPacketObjMap;
 

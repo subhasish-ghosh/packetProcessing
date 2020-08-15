@@ -11,12 +11,13 @@ void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
         format = (CDP_PacketFormat_t *) (&data[0]);
         format->time = be32toh(format->time);
 
-        if (format->battStatus >= strbattStatus->size()) {
-            format->battStatus = 0;
-            cdp_err("Invalid Battery Status Received, assuming: ", strbattStatus[format->battStatus]);
-        }
-
         cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
+
+        if (format->battStatus >= strbattStatus.size()) {
+            cdp_err("Invalid Battery Status Received <", format->battStatus,"> ..ignoring");
+            stateErrorDetected = true;
+            return;
+        }
 
         cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
                  strbattStatus[format->battStatus]);
@@ -64,9 +65,9 @@ CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPac
     }
 }
 
-bool CDP_BatteryStatus::objInit = false;
-CDP_BatteryStatus::CDP_PacketFormat_t *CDP_BatteryStatus::format = nullptr;
-CDP_BatteryStatus *CDP_BatteryStatus::cdpBatteryStatus = nullptr;
+bool CDP_BatteryStatus::get_error(void) {
+    return stateErrorDetected;
+}
 
 CDP_BatteryStatus::CDP_BatteryStatus() {}
 

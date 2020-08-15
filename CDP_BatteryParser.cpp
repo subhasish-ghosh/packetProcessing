@@ -76,7 +76,17 @@ void CDP_BatteryParser::run(std::string fileName) {
 
             batObj->step(data);
         }
-    } catch (std::string str) {
+        for(int iterTypes = 0; iterTypes < CDP_BatteryPackets::CDP_PACKETTYPE_MAX; iterTypes++) {
+            CDP_BatteryPackets *batObjErr = CDP_BatteryFactory::getPacketObj(
+                    reinterpret_cast<CDP_BatteryPackets::CDP_BatteryPacketsType_t &>(iterTypes));
+
+            if(nullptr != batObjErr) {
+                if(batObjErr->get_error()) {
+                    obj.cdp_err(batObjErr->get_name(), ": Warning: System Errors Detected!!. System state data unreliable");
+                }
+            }
+        }
+    } catch (const char* str) {
         obj.cdp_err("CDP_BatteryParser: ", str);
         throw;
     } catch (std::exception &e) {

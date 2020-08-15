@@ -40,18 +40,21 @@ public:
 
     std::string get_name(void);
 
+    bool get_error(void);
+
 private:
-    static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYSTATUS;
-    static const ssize_t datalen = 5;
+    inline static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYSTATUS;
+    inline static const ssize_t datalen = 5;
     inline static const std::string name = "Battery Status";
-    static bool objInit;
-    static CDP_BatteryStatus *cdpBatteryStatus;
+    inline static bool objInit = false;
+    inline static bool stateErrorDetected = false;
+    inline static CDP_BatteryStatus *cdpBatteryStatus = nullptr;
     typedef struct {
         uint32_t time;
         uint8_t battStatus;
     } __attribute__((packed)) CDP_PacketFormat_t;
-    static CDP_PacketFormat_t *format;
-    inline static const std::string strbattStatus[] = {"VLOW",
+    inline static CDP_PacketFormat_t *format = nullptr;
+    inline static const std::array strbattStatus = {"VLOW",
                                                "LOW",
                                                "MED",
                                                "HIGH"};
