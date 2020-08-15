@@ -46,6 +46,11 @@ private:
     inline static const std::string name = "Battery Status";
     static bool objInit;
     static CDP_BatteryStatus *cdpBatteryStatus;
+    typedef struct {
+        uint32_t time;
+        uint8_t battStatus;
+    } __attribute__((packed)) CDP_PacketFormat_t;
+    static CDP_PacketFormat_t *format;
 
     CDP_BatteryStatus();
 

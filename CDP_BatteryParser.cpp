@@ -58,14 +58,14 @@ void CDP_BatteryParser::run(std::string fileName) {
                     uint8_t errval = 0;
                     fp.read(reinterpret_cast<char *> (&errval), sizeof(errval));
 
-                    errsum = errsum % (UINT8_MAX + 1);
+                    errsum = errsum % (UINT8_MAX + 1); //TODO:: need to check why without +1 it worked sometimes
                     if (errsum != errval) {
-                        batObj->cdp_err("Packet Data Error..Ignoring, Type: ", batObj->get_name(), " expected: ",
+                        obj.cdp_err("Packet Data Error..Ignoring, Type: ", batObj->get_name(), " expected: ",
                                         errsum, " received err: ", reinterpret_cast<int *> (errval));
                         continue;
                     } else {
-                        batObj->cdp_dbg("Packet Receive Success, Type: ", batObj->get_name(), " received err: ",
-                                        reinterpret_cast<int *> (errval));
+                        obj.cdp_dbg("Packet Receive Success, Type: ", batObj->get_name(), " received err: ",
+                                        reinterpret_cast<int *> (errval)); //TODO:: need to remove reinterpret
                     }
                 }
 
