@@ -3,6 +3,7 @@
 //
 
 #include <netinet/in.h>
+#include <chrono>
 #include "CDP_BatteryStatus.h"
 
 void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
@@ -11,6 +12,8 @@ void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
     format->time = be32toh(format->time);
     cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
 
+    cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
+             state[format->battStatus]);
 }
 
 std::string CDP_BatteryStatus::get_name(void) {
@@ -25,7 +28,7 @@ ssize_t CDP_BatteryStatus::get_dataLen(void) {
     return datalen;
 }
 
-CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t typelocal) {
+CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &typelocal) {
     if (type == typelocal) {
         if (false == objInit) {
             cdpBatteryStatus = new CDP_BatteryStatus();

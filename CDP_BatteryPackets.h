@@ -21,7 +21,7 @@ public:
         CDP_PACKETTYPE_MAX,
     } CDP_BatteryPacketsType_t;
 
-    typedef CDP_BatteryPackets *(*getPacketObjFuncPtr_t)(CDP_BatteryPackets::CDP_BatteryPacketsType);
+    typedef CDP_BatteryPackets *(*getPacketObjFuncPtr_t)(CDP_BatteryPackets::CDP_BatteryPacketsType &);
 
     virtual void step(std::vector<uint8_t> &) = 0;
 

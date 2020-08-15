@@ -27,7 +27,7 @@ ssize_t CDP_BatteryPower::get_dataLen(void) {
     return datalen;
 }
 
-CDP_BatteryPackets *CDP_BatteryPower::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t typelocal) {
+CDP_BatteryPackets *CDP_BatteryPower::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &typelocal) {
     try {
         if (type == typelocal) {
             if (false == objInit) {

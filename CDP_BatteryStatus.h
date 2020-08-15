@@ -32,7 +32,7 @@ public:
 
     void step(std::vector<uint8_t> &);
 
-    static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t type);
+    static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &type);
 
     CDP_BatteryPacketsType get_type(void);
 
@@ -51,7 +51,10 @@ private:
         uint8_t battStatus;
     } __attribute__((packed)) CDP_PacketFormat_t;
     static CDP_PacketFormat_t *format;
-
+    inline static const std::string state[] = {"VLOW",
+                                               "LOW",
+                                               "MED",
+                                               "HIGH"};
     CDP_BatteryStatus();
 
     CDP_BatteryStatus(const CDP_BatteryStatus &);

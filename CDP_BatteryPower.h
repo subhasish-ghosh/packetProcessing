@@ -32,7 +32,7 @@ public:
 
     void step(std::vector<uint8_t> &);
 
-    static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t type);
+    static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &type);
 
     CDP_BatteryPacketsType get_type(void);
 
