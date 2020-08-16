@@ -2,14 +2,12 @@
 // Created by subhasish on 13/08/2020.
 //
 
-#include <netinet/in.h>
-#include <chrono>
 #include "CDP_BatteryStatus.h"
 
 void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
     try {
         format = (CDP_PacketFormat_t *) (&data[0]);
-        format->time = be32toh(format->time);
+        format->time = cdp_ntohl(format->time);
 
         cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
 

@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <iostream>
 #include <sstream>
+#include "CDP_Platform.h"
 
 class CDP_BatteryLogger {
 public:

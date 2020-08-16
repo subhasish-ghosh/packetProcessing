@@ -2,17 +2,15 @@
 // Created by subhasish on 13/08/2020.
 //
 
-#include <netinet/in.h>
-#include <algorithm>
 #include "CDP_BatteryPower.h"
 
 void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
     try {
         format = (CDP_PacketFormat_t *) (&data[0]);
-        format->time = be32toh(format->time);
-        format->volt = be32toh(format->volt);
-        format->current = be64toh(format->current);
+        format->time = cdp_ntohl(format->time);
+        format->volt = cdp_ntohl(format->volt);
+        format->current = cdp_ntohll(format->current);
 
         cdp_dbg("time: ", uint32_t(format->time), " volt: ", uint32_t(format->volt), " current: ",
                 uint64_t(format->current));
@@ -31,7 +29,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
         uint64_t mWatt = format->current * format->volt;
 
-        static std::pair currPowerState = std::make_pair<uint32_t>(0, 0);
+        static std::pair currPowerState = std::make_pair<uint32_t, uint32_t>(0, 0);
         currPowerState.second = 0;
         currPowerState.first = format->time;
         /* Search for a legal state */
@@ -62,7 +60,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
         /* Search for legal state transition */
         if (prevPowerStateCommit.second != currPowerStateCommit.second) {
-            int itrState = 0;
+            uint32_t itrState = 0;
             for (itrState = 0; itrState < stateTable.size(); itrState++) {
                 if ((prevPowerStateCommit.second == std::get<0>(stateTable[itrState])) &&
                     (currPowerStateCommit.second == std::get<1>(stateTable[itrState]))) {

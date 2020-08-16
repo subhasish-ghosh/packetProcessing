@@ -5,7 +5,6 @@
 #ifndef CODINGTEST_CDP_BATTERYPACKETS_H
 #define CODINGTEST_CDP_BATTERYPACKETS_H
 
-
 #include <vector>
 #include <map>
 #include "CDP_BatteryLogger.h"
@@ -27,7 +26,7 @@ public:
 
     virtual CDP_BatteryPacketsType get_type(void) = 0;
 
-    virtual ssize_t get_dataLen(void) = 0;
+    virtual ssize_t  get_dataLen(void) = 0;
 
     virtual std::string get_name(void) = 0;
 

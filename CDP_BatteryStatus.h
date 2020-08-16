@@ -49,10 +49,10 @@ private:
     inline static bool objInit = false;
     inline static bool stateErrorDetected = false;
     inline static CDP_BatteryStatus *cdpBatteryStatus = nullptr;
-    typedef struct {
+    typedef PACK (struct {
         uint32_t time;
         uint8_t battStatus;
-    } __attribute__((packed)) CDP_PacketFormat_t;
+    } ) CDP_PacketFormat_t;
     inline static CDP_PacketFormat_t *format = nullptr;
     inline static const std::array strbattStatus = {"VLOW",
                                                "LOW",
