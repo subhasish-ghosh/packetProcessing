@@ -32,6 +32,10 @@ void CDP_BatteryParser::run(const std::string &fileName) {
 
             fp.read(reinterpret_cast<char *> (&typePkt), sizeof(uint8_t));
 
+            if (typePkt >= CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX) {
+                throw("Invalid Packet Type");
+            }
+
             /* Call specific packet type processor */
             CDP_BatteryPackets *batObj = CDP_BatteryFactory::getPacketObj(typePkt);
             errsum = typePkt;

@@ -16,7 +16,7 @@ CDP_BatteryPackets *CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_Bat
         } else {
             throw ("getPacketObjMap.at returned null");
         }
-    } catch (std::string str) {
+    } catch (const char *str) {
         log.cdp_err("CDP_BatteryFactory::getPacketObj failed: ", str);
         throw;
     } catch (std::exception &e) {

@@ -10,7 +10,6 @@
 #include "CDP_BatteryLogger.h"
 
 class CDP_BatteryPackets : public CDP_BatteryLogger {
-
 public:
 
 
@@ -33,6 +32,10 @@ public:
     virtual std::string get_name(void) = 0;
 
     virtual bool get_error(void) = 0;
+
+    static CDP_BatteryPackets* default_PktHandler(CDP_BatteryPacketsType_t&);
+private:
+    
 };
 extern std::map<CDP_BatteryPackets::CDP_BatteryPacketsType_t, CDP_BatteryPackets::getPacketObjFuncPtr_t> getPacketObjMap;
 
