@@ -25,7 +25,7 @@ public:
         }
     }
 
-    static void run(std::string fileName);
+    static void run(const std::string  &fileName);
 };
 
 

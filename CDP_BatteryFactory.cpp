@@ -4,9 +4,10 @@
 
 #include "CDP_BatteryFactory.h"
 
-CDP_BatteryPackets *CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &type) {
+CDP_BatteryPackets *CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t type) {
 
     CDP_BatteryLogger log;
+
     try {
         CDP_BatteryPackets *ObjPtr = getPacketObjMap.at(type)(type);
 

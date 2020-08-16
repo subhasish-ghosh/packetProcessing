@@ -12,6 +12,8 @@
 class CDP_BatteryPackets : public CDP_BatteryLogger {
 
 public:
+
+
     /* assign packets types and avoid duplicates */
     typedef enum CDP_BatteryPacketsType {
         CDP_PACKETTYPE_MIN,
@@ -20,11 +22,11 @@ public:
         CDP_PACKETTYPE_MAX,
     } CDP_BatteryPacketsType_t;
 
-    typedef CDP_BatteryPackets *(*getPacketObjFuncPtr_t)(CDP_BatteryPackets::CDP_BatteryPacketsType &);
+    typedef CDP_BatteryPackets *(*getPacketObjFuncPtr_t)(CDP_BatteryPacketsType_t &);
 
     virtual void step(std::vector<uint8_t> &) = 0;
 
-    virtual CDP_BatteryPacketsType get_type(void) = 0;
+    virtual CDP_BatteryPacketsType_t get_type(void) = 0;
 
     virtual ssize_t  get_dataLen(void) = 0;
 

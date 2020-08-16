@@ -34,7 +34,7 @@ public:
 
     static CDP_BatteryPackets *getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &type);
 
-    CDP_BatteryPacketsType get_type(void);
+    CDP_BatteryPacketsType_t get_type(void);
 
     ssize_t get_dataLen(void);
 
@@ -43,7 +43,7 @@ public:
     bool get_error(void);
 
 private:
-    inline static const CDP_BatteryPacketsType type = CDP_PACKETSTYPE_BATTERYSTATUS;
+    inline static const CDP_BatteryPacketsType_t type = CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETSTYPE_BATTERYSTATUS;
     inline static const ssize_t datalen = 5;
     inline static const std::string name = "Battery Status";
     inline static bool objInit = false;

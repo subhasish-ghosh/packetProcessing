@@ -96,7 +96,7 @@ std::string CDP_BatteryPower::get_name(void) {
     return name;
 }
 
-CDP_BatteryPower::CDP_BatteryPacketsType CDP_BatteryPower::get_type(void) {
+CDP_BatteryPower::CDP_BatteryPacketsType_t CDP_BatteryPower::get_type(void) {
     return type;
 }
 

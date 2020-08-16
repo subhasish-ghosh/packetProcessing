@@ -10,7 +10,7 @@ int main(int argc, char **argv) {
     }
 
     try {
-        CDP_BatteryParser::run(argv[1]);
+        CDP_BatteryParser::run(std::string(argv[1]));
     } catch (...) {
         logger.cdp_err("Main: Parser Failed to run");
         return -1;

@@ -6,15 +6,17 @@
 #include "CDP_BatteryPackets.h"
 #include "CDP_BatteryFactory.h"
 
-void CDP_BatteryParser::run(std::string fileName) {
+void CDP_BatteryParser::run(const std::string &fileName) {
     CDP_BatteryParser obj;
     std::ifstream fp;
 
     try {
         fp.exceptions(std::ifstream::failbit | std::ifstream::badbit);
         fp.open(fileName.c_str(), std::ios::binary);
-    }
-    catch (...) {
+    } catch (std::exception &e) {
+        obj.cdp_err("CDP_BatteryParser: File Open Error: ", e.what());
+        throw;
+    } catch (...) {
         obj.cdp_err("CDP_BatteryParser: File Open Error");
         throw;
     }
@@ -23,17 +25,16 @@ void CDP_BatteryParser::run(std::string fileName) {
     try {
         while (fp.peek() != EOF) {
             std::vector<uint8_t> data;
-            uint8_t type = 0;
+            CDP_BatteryPackets::CDP_BatteryPacketsType_t typePkt = CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MIN;
             uint32_t errsum = 0;
 
             data.clear();
 
-            fp.read(reinterpret_cast<char *> (&type), sizeof(type));
+            fp.read(reinterpret_cast<char *> (&typePkt), sizeof(uint8_t));
 
             /* Call specific packet type processor */
-            CDP_BatteryPackets *batObj = CDP_BatteryFactory::getPacketObj(
-                    reinterpret_cast<CDP_BatteryPackets::CDP_BatteryPacketsType_t &>(type));
-            errsum = type;
+            CDP_BatteryPackets *batObj = CDP_BatteryFactory::getPacketObj(typePkt);
+            errsum = typePkt;
 
             /* Determine packet len and read data */
             if (nullptr != batObj) {
@@ -46,7 +47,7 @@ void CDP_BatteryParser::run(std::string fileName) {
                 int i = 0;
                 for (i = 0; (i < len) && (fp.peek() != EOF); i++) {
                     uint8_t dat = 0;
-                    fp.read(reinterpret_cast<char *> (&dat), sizeof(dat));
+                    fp.read(reinterpret_cast<char *> (&dat), sizeof(uint8_t));
                     data.push_back(dat);
                     errsum += dat;
                 }
@@ -56,7 +57,7 @@ void CDP_BatteryParser::run(std::string fileName) {
                 } else {
                     /* Check any error */
                     uint8_t errval = 0;
-                    fp.read(reinterpret_cast<char *> (&errval), sizeof(errval));
+                    fp.read(reinterpret_cast<char *> (&errval), sizeof(uint8_t));
 
                     errsum = errsum % (UINT8_MAX + 1); //TODO:: need to check why without +1 it worked sometimes
                     if (errsum != errval) {
@@ -76,9 +77,8 @@ void CDP_BatteryParser::run(std::string fileName) {
 
             batObj->step(data);
         }
-        for(int iterTypes = 0; iterTypes < CDP_BatteryPackets::CDP_PACKETTYPE_MAX; iterTypes++) {
-            CDP_BatteryPackets *batObjErr = CDP_BatteryFactory::getPacketObj(
-                    reinterpret_cast<CDP_BatteryPackets::CDP_BatteryPacketsType_t &>(iterTypes));
+        for(uint8_t iterTypes = 0; iterTypes < CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX; iterTypes++) {
+            CDP_BatteryPackets* batObjErr = CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t(iterTypes));
 
             if(nullptr != batObjErr) {
                 if(batObjErr->get_error()) {

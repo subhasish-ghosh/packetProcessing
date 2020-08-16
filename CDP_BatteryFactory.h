@@ -12,7 +12,7 @@
 class CDP_BatteryFactory: public CDP_BatteryLogger {
 
 public:
-    static CDP_BatteryPackets * getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &type);
+    static CDP_BatteryPackets * getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t type);
 };
 
 #endif //CODINGTEST_CDP_BATTERYFACTORY_H

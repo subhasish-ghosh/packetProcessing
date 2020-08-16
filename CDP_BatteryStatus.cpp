@@ -32,7 +32,7 @@ std::string CDP_BatteryStatus::get_name(void) {
     return name;
 }
 
-CDP_BatteryStatus::CDP_BatteryPacketsType CDP_BatteryStatus::get_type(void) {
+CDP_BatteryStatus::CDP_BatteryPacketsType_t CDP_BatteryStatus::get_type(void) {
     return type;
 }
 
