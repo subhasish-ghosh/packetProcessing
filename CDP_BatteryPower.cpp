@@ -3,7 +3,6 @@
 //
 
 #include <netinet/in.h>
-#include <chrono>
 #include <algorithm>
 #include "CDP_BatteryPower.h"
 
@@ -31,35 +30,54 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
         }
 
         uint64_t mWatt = format->current * format->volt;
-        int currPowerState = 0;
-        for (currPowerState = 0; currPowerState < mwattStateTable.size(); currPowerState++) {
-            if (mWatt == std::clamp<uint64_t>(mWatt, mwattStateTable[currPowerState].first,
-                                              mwattStateTable[currPowerState].second)) {
+
+        static std::pair currPowerState = std::make_pair<uint32_t>(0, 0);
+        currPowerState.second = 0;
+        currPowerState.first = format->time;
+        /* Search for a legal state */
+        for (currPowerState.second = 0; currPowerState.second < mwattStateTable.size(); currPowerState.second++) {
+            if (mWatt == std::clamp<uint64_t>(mWatt, mwattStateTable[currPowerState.second].first,
+                                              mwattStateTable[currPowerState.second].second)) {
                 break;
             }
         }
 
-        if (currPowerState >= mwattStateTable.size()) {
+        /* If current state is illegal, then ignore */
+        if (currPowerState.second >= mwattStateTable.size()) {
             cdp_err("Invalid power state..Ignoring");
             stateErrorDetected = true;
             return;
         }
 
-        if (prevPowerState != currPowerState) {
+        /* Check Debounce */
+        if(currPowerState.second != prevPowerStateCommit.second) {
+            if(currPowerState.second != prevPowerStateDBounce.second) {
+                prevPowerStateDBounce = currPowerState;
+            } else {
+                if ((currPowerState.first - prevPowerStateDBounce.first) >= 10) {
+                    currPowerStateCommit = prevPowerStateDBounce;
+                }
+            }
+        }
+
+        /* Search for legal state transition */
+        if (prevPowerStateCommit.second != currPowerStateCommit.second) {
             int itrState = 0;
             for (itrState = 0; itrState < stateTable.size(); itrState++) {
-                if ((prevPowerState == std::get<0>(stateTable[itrState])) &&
-                    (currPowerState == std::get<1>(stateTable[itrState]))) {
+                if ((prevPowerStateCommit.second == std::get<0>(stateTable[itrState])) &&
+                    (currPowerStateCommit.second == std::get<1>(stateTable[itrState]))) {
                     cdp_info(std::chrono::duration_cast<std::chrono::seconds>(
-                            std::chrono::milliseconds(format->time)).count(), ";",
-                             prevPowerState, '-', currPowerState);
-                    prevPowerState = currPowerState;
+                            std::chrono::milliseconds(currPowerStateCommit.first)).count(), ";",
+                             prevPowerStateCommit.second, '-', currPowerStateCommit.second);
+                    prevPowerStateCommit = currPowerStateCommit;
                     break;
                 }
             }
 
+            /* If state transition is illegal, then ignore */
             if (itrState >= stateTable.size()) {
-                cdp_err("Invalid power state transition<", prevPowerState, '-', currPowerState, ">", "..Ignoring");
+                cdp_err("Invalid power state transition<", prevPowerStateCommit.second, '-', currPowerStateCommit.second, ">",
+                        "..Ignoring");
                 stateErrorDetected = true;
                 return;
             }
@@ -114,6 +132,7 @@ CDP_BatteryPackets *CDP_BatteryPower::getObj(CDP_BatteryPackets::CDP_BatteryPack
 bool CDP_BatteryPower::get_error(void) {
     return stateErrorDetected;
 }
+
 CDP_BatteryPower::CDP_BatteryPower() {}
 
 CDP_BatteryPower::CDP_BatteryPower(const CDP_BatteryPower &) {}

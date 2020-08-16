@@ -8,6 +8,7 @@
 
 #include "CDP_BatteryLogger.h"
 #include "CDP_BatteryPackets.h"
+#include <chrono>
 
 class CDP_BatteryPower : public CDP_BatteryPackets {
 public:
@@ -55,7 +56,10 @@ private:
         uint64_t current;
     } __attribute__((packed)) CDP_PacketFormat_t;
     inline static CDP_PacketFormat_t *format = nullptr;
-    inline static uint32_t prevPowerState = 0;
+    /* Time, State pairs */
+    inline static std::pair prevPowerStateDBounce = std::make_pair<uint32_t>(0, 0);
+    inline static std::pair prevPowerStateCommit = std::make_pair<uint32_t>(0, 0);
+    inline static std::pair currPowerStateCommit = std::make_pair<uint32_t>(0, 0);
     inline static std::array mwattStateTable = {std::make_pair<uint64_t>(0, 200),
                                                 std::make_pair<uint64_t>(300, 450),
                                                 std::make_pair<uint64_t>(550, 650),
