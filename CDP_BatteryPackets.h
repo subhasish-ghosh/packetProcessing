@@ -14,7 +14,7 @@ public:
 
 
     /* assign packets types and avoid duplicates */
-    typedef enum CDP_BatteryPacketsType {
+    typedef enum CDP_BatteryPacketsType : uint8_t {
         CDP_PACKETTYPE_MIN,
         CDP_PACKETSTYPE_BATTERYPOWER = CDP_PACKETTYPE_MIN,
         CDP_PACKETSTYPE_BATTERYSTATUS,

@@ -45,7 +45,7 @@ public:
 
     static int getLogLevel();
 
-    enum CDP_LoggerLevel {
+    enum CDP_LoggerLevel: uint8_t {
         CDP_LOGGER_LEVEL_ERROR,
         CDP_LOGGER_LEVEL_INFO,
         CDP_LOGGER_LEVEL_DBG
