@@ -55,7 +55,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
             if (currPowerState.second != prevPowerStateDBounce.second) {
                 prevPowerStateDBounce = currPowerState;
             } else {
-                if (abs(static_cast<int32_t>(currPowerState.first - prevPowerStateDBounce.first)) >=
+                if (static_cast<uint32_t>(currPowerState.first - prevPowerStateDBounce.first) >=
                     CDP_BATTERYPOWER_DEBOUNCE_MS) {
                     currPowerStateCommit = prevPowerStateDBounce;
                 }
