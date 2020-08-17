@@ -312,6 +312,33 @@ CDP_BatteryStatus.cpp.s:
 	$(MAKE) -f CMakeFiles/CodingTest.dir/build.make CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.s
 .PHONY : CDP_BatteryStatus.cpp.s
 
+CDP_TemplatePacketEngine.o: CDP_TemplatePacketEngine.cpp.o
+
+.PHONY : CDP_TemplatePacketEngine.o
+
+# target to build an object file
+CDP_TemplatePacketEngine.cpp.o:
+	$(MAKE) -f CMakeFiles/CodingTest.dir/build.make CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o
+.PHONY : CDP_TemplatePacketEngine.cpp.o
+
+CDP_TemplatePacketEngine.i: CDP_TemplatePacketEngine.cpp.i
+
+.PHONY : CDP_TemplatePacketEngine.i
+
+# target to preprocess a source file
+CDP_TemplatePacketEngine.cpp.i:
+	$(MAKE) -f CMakeFiles/CodingTest.dir/build.make CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.i
+.PHONY : CDP_TemplatePacketEngine.cpp.i
+
+CDP_TemplatePacketEngine.s: CDP_TemplatePacketEngine.cpp.s
+
+.PHONY : CDP_TemplatePacketEngine.s
+
+# target to generate assembly for a file
+CDP_TemplatePacketEngine.cpp.s:
+	$(MAKE) -f CMakeFiles/CodingTest.dir/build.make CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.s
+.PHONY : CDP_TemplatePacketEngine.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +369,9 @@ help:
 	@echo "... CDP_BatteryStatus.o"
 	@echo "... CDP_BatteryStatus.i"
 	@echo "... CDP_BatteryStatus.s"
+	@echo "... CDP_TemplatePacketEngine.o"
+	@echo "... CDP_TemplatePacketEngine.i"
+	@echo "... CDP_TemplatePacketEngine.s"
 .PHONY : help
 
 

@@ -24,6 +24,7 @@ CMakeFiles/CodingTest.dir/CDP_BatteryPackets.cpp.o: ../CDP_BatteryPackets.h
 CMakeFiles/CodingTest.dir/CDP_BatteryPackets.cpp.o: ../CDP_BatteryPower.h
 CMakeFiles/CodingTest.dir/CDP_BatteryPackets.cpp.o: ../CDP_BatteryStatus.h
 CMakeFiles/CodingTest.dir/CDP_BatteryPackets.cpp.o: ../CDP_Platform.h
+CMakeFiles/CodingTest.dir/CDP_BatteryPackets.cpp.o: ../CDP_TemplatePacketEngine.h
 
 CMakeFiles/CodingTest.dir/CDP_BatteryParser.cpp.o: ../CDP_BatteryFactory.h
 CMakeFiles/CodingTest.dir/CDP_BatteryParser.cpp.o: ../CDP_BatteryLogger.h
@@ -45,4 +46,10 @@ CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.o: ../CDP_BatteryPackets.h
 CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.o: ../CDP_BatteryStatus.cpp
 CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.o: ../CDP_BatteryStatus.h
 CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.o: ../CDP_Platform.h
+
+CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o: ../CDP_BatteryLogger.h
+CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o: ../CDP_BatteryPackets.h
+CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o: ../CDP_Platform.h
+CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o: ../CDP_TemplatePacketEngine.cpp
+CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o: ../CDP_TemplatePacketEngine.h
 

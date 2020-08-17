@@ -117,6 +117,7 @@
     <ClCompile Include="CDP_BatteryParser.cpp" />
     <ClCompile Include="CDP_BatteryPower.cpp" />
     <ClCompile Include="CDP_BatteryStatus.cpp" />
+    <ClCompile Include="CDP_TemplatePacketEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDP_BatteryFactory.h" />
@@ -126,6 +127,7 @@
     <ClInclude Include="CDP_BatteryPower.h" />
     <ClInclude Include="CDP_BatteryStatus.h" />
     <ClInclude Include="CDP_Platform.h" />
+    <ClInclude Include="CDP_TemplatePacketEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

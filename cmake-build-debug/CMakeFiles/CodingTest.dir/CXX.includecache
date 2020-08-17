@@ -30,10 +30,6 @@ sstream
 CDP_Platform.h
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_Platform.h
 
-/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryMonitor.cpp
-CDP_BatteryParser.h
-/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryParser.h
-
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryPackets.cpp
 CDP_BatteryPackets.h
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryPackets.h
@@ -41,6 +37,8 @@ CDP_BatteryPower.h
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryPower.h
 CDP_BatteryStatus.h
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryStatus.h
+CDP_TemplatePacketEngine.h
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.h
 
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryPackets.h
 vector
@@ -99,4 +97,14 @@ winsock2.h
 -
 BaseTsd.h
 -
+
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.cpp
+CDP_TemplatePacketEngine.h
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.h
+
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.h
+CDP_BatteryLogger.h
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryLogger.h
+CDP_BatteryPackets.h
+/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryPackets.h
 

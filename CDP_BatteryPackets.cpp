@@ -7,6 +7,7 @@
 #include "CDP_BatteryPackets.h"
 #include "CDP_BatteryPower.h"
 #include "CDP_BatteryStatus.h"
+#include "CDP_TemplatePacketEngine.h"
 
 CDP_BatteryPackets *CDP_BatteryPackets::default_PktHandler(CDP_BatteryPacketsType_t &t) {
 
@@ -30,6 +31,8 @@ std::map<CDP_BatteryPackets::CDP_BatteryPacketsType_t, CDP_BatteryPackets::getPa
                        CDP_BatteryPower::getObj),
         std::make_pair(CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETSTYPE_BATTERYSTATUS,
                        CDP_BatteryStatus::getObj),
+        std::make_pair(CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETSTYPE_BATTERYTEMPLATE,
+                       CDP_TemplatePacketEngine::getObj),
 
         std::make_pair(CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX,
                        CDP_BatteryPackets::default_PktHandler) // terminator: add new class above this

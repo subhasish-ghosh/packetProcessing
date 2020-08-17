@@ -36,6 +36,9 @@
     <ClCompile Include="CDP_BatteryStatus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CDP_TemplatePacketEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDP_BatteryFactory.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CDP_Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CDP_TemplatePacketEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CodingTest.dir/CDP_BatteryParser.cpp.o"
   "CMakeFiles/CodingTest.dir/CDP_BatteryPower.cpp.o"
   "CMakeFiles/CodingTest.dir/CDP_BatteryStatus.cpp.o"
+  "CMakeFiles/CodingTest.dir/CDP_TemplatePacketEngine.cpp.o"
   "CodingTest"
   "CodingTest.pdb"
 )

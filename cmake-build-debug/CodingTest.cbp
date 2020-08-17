@@ -124,6 +124,12 @@
 		<Unit filename="/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_Platform.h">
 			<Option target="CodingTest"/>
 		</Unit>
+		<Unit filename="/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.cpp">
+			<Option target="CodingTest"/>
+		</Unit>
+		<Unit filename="/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_TemplatePacketEngine.h">
+			<Option target="CodingTest"/>
+		</Unit>
 		<Unit filename="/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
