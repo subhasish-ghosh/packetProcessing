@@ -1,0 +1,121 @@
+\begin{theindex}
+
+  \item {CDP\_BatteryFactory}, \hyperpage{7}
+    \subitem {getPacketObj}, \hyperpage{8}
+  \item {CDP\_BatteryFactory.cpp}, \hyperpage{29}
+  \item {CDP\_BatteryFactory.h}, \hyperpage{30}
+  \item {CDP\_BatteryLogger}, \hyperpage{8}
+    \subitem {cdp\_dbg}, \hyperpage{10}
+    \subitem {cdp\_info}, \hyperpage{10}
+    \subitem {getLogLevel}, \hyperpage{10}
+    \subitem {setLogLevel}, \hyperpage{11}
+  \item {CDP\_BatteryLogger.cpp}, \hyperpage{31}
+  \item {CDP\_BatteryLogger.h}, \hyperpage{31}
+  \item {CDP\_BatteryMonitor.cpp}, \hyperpage{32}
+    \subitem {main}, \hyperpage{33}
+  \item {CDP\_BatteryPackets}, \hyperpage{11}
+    \subitem {CDP\_BatteryPacketsType}, \hyperpage{13}
+    \subitem {default\_PktHandler}, \hyperpage{13}
+    \subitem {get\_dataLen}, \hyperpage{14}
+    \subitem {get\_error}, \hyperpage{14}
+    \subitem {get\_name}, \hyperpage{14}
+    \subitem {get\_type}, \hyperpage{15}
+    \subitem {step}, \hyperpage{15}
+  \item {CDP\_BatteryPackets.cpp}, \hyperpage{33}
+    \subitem {getPacketObjMap}, \hyperpage{34}
+  \item {CDP\_BatteryPackets.h}, \hyperpage{35}
+    \subitem {getPacketObjMap}, \hyperpage{36}
+  \item {CDP\_BatteryPacketsType}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{13}
+  \item {CDP\_BatteryParser}, \hyperpage{16}
+    \subitem {cdp\_dbg}, \hyperpage{17}
+    \subitem {run}, \hyperpage{17}
+  \item {CDP\_BatteryParser.cpp}, \hyperpage{36}
+  \item {CDP\_BatteryParser.h}, \hyperpage{37}
+  \item {CDP\_BatteryPower}, \hyperpage{18}
+    \subitem {cdp\_dbg}, \hyperpage{20}
+    \subitem {cdp\_info}, \hyperpage{20}
+    \subitem {get\_dataLen}, \hyperpage{20}
+    \subitem {get\_error}, \hyperpage{21}
+    \subitem {get\_name}, \hyperpage{21}
+    \subitem {get\_type}, \hyperpage{22}
+    \subitem {getObj}, \hyperpage{22}
+    \subitem {step}, \hyperpage{22}
+  \item {CDP\_BatteryPower.cpp}, \hyperpage{39}
+  \item {CDP\_BatteryPower.h}, \hyperpage{39}
+  \item {CDP\_BatteryStatus}, \hyperpage{23}
+    \subitem {cdp\_dbg}, \hyperpage{25}
+    \subitem {cdp\_info}, \hyperpage{25}
+    \subitem {get\_dataLen}, \hyperpage{25}
+    \subitem {get\_error}, \hyperpage{26}
+    \subitem {get\_name}, \hyperpage{26}
+    \subitem {get\_type}, \hyperpage{27}
+    \subitem {getObj}, \hyperpage{27}
+    \subitem {step}, \hyperpage{27}
+  \item {CDP\_BatteryStatus.cpp}, \hyperpage{41}
+  \item {CDP\_BatteryStatus.h}, \hyperpage{41}
+  \item {cdp\_dbg}
+    \subitem {CDP\_BatteryLogger}, \hyperpage{10}
+    \subitem {CDP\_BatteryParser}, \hyperpage{17}
+    \subitem {CDP\_BatteryPower}, \hyperpage{20}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{25}
+  \item {cdp\_info}
+    \subitem {CDP\_BatteryLogger}, \hyperpage{10}
+    \subitem {CDP\_BatteryPower}, \hyperpage{20}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{25}
+  \item {CDP\_Platform.h}, \hyperpage{43}
+
+  \indexspace
+
+  \item {default\_PktHandler}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{13}
+
+  \indexspace
+
+  \item {get\_dataLen}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{14}
+    \subitem {CDP\_BatteryPower}, \hyperpage{20}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{25}
+  \item {get\_error}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{14}
+    \subitem {CDP\_BatteryPower}, \hyperpage{21}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{26}
+  \item {get\_name}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{14}
+    \subitem {CDP\_BatteryPower}, \hyperpage{21}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{26}
+  \item {get\_type}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{15}
+    \subitem {CDP\_BatteryPower}, \hyperpage{22}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{27}
+  \item {getLogLevel}
+    \subitem {CDP\_BatteryLogger}, \hyperpage{10}
+  \item {getObj}
+    \subitem {CDP\_BatteryPower}, \hyperpage{22}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{27}
+  \item {getPacketObj}
+    \subitem {CDP\_BatteryFactory}, \hyperpage{8}
+  \item {getPacketObjMap}
+    \subitem {CDP\_BatteryPackets.cpp}, \hyperpage{34}
+    \subitem {CDP\_BatteryPackets.h}, \hyperpage{36}
+
+  \indexspace
+
+  \item {main}
+    \subitem {CDP\_BatteryMonitor.cpp}, \hyperpage{33}
+
+  \indexspace
+
+  \item {run}
+    \subitem {CDP\_BatteryParser}, \hyperpage{17}
+
+  \indexspace
+
+  \item {setLogLevel}
+    \subitem {CDP\_BatteryLogger}, \hyperpage{11}
+  \item {step}
+    \subitem {CDP\_BatteryPackets}, \hyperpage{15}
+    \subitem {CDP\_BatteryPower}, \hyperpage{22}
+    \subitem {CDP\_BatteryStatus}, \hyperpage{27}
+
+\end{theindex}

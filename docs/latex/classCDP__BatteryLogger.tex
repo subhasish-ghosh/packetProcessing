@@ -1,0 +1,146 @@
+\hypertarget{classCDP__BatteryLogger}{}\doxysection{C\+D\+P\+\_\+\+Battery\+Logger Class Reference}
+\label{classCDP__BatteryLogger}\index{CDP\_BatteryLogger@{CDP\_BatteryLogger}}
+
+
+The Battery Monitor Logging Class.  
+
+
+
+
+{\ttfamily \#include $<$C\+D\+P\+\_\+\+Battery\+Logger.\+h$>$}
+
+
+
+Inheritance diagram for C\+D\+P\+\_\+\+Battery\+Logger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCDP__BatteryLogger__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCDP__BatteryLogger_a56bc63895dcd43f063255e3356febfc6}\label{classCDP__BatteryLogger_a56bc63895dcd43f063255e3356febfc6}} 
+enum \mbox{\hyperlink{classCDP__BatteryLogger_a56bc63895dcd43f063255e3356febfc6}{C\+D\+P\+\_\+\+Logger\+Level}} \+: uint8\+\_\+t \{ {\bfseries C\+D\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+\+E\+R\+R\+OR}, 
+{\bfseries C\+D\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+FO}, 
+{\bfseries C\+D\+P\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+L\+E\+V\+E\+L\+\_\+\+D\+BG}
+ \}
+\begin{DoxyCompactList}\small\item\em This defines the various logging levels available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCDP__BatteryLogger_a8822f0b86d5292c2b738b1aac844dfb4}\label{classCDP__BatteryLogger_a8822f0b86d5292c2b738b1aac844dfb4}} 
+{\footnotesize template$<$typename... Args$>$ }\\void {\bfseries cdp\+\_\+err} (Args \&\&... args)
+\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classCDP__BatteryLogger_a071d9e2720d336fd554bca12ba898c19}{cdp\+\_\+info}} (Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em This function is used for information level logging. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classCDP__BatteryLogger_a385f4e3f8ac6c43f8fcc5e3aacd07a7e}{cdp\+\_\+dbg}} (Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em This function is used for debug level logging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classCDP__BatteryLogger_a34c1fdf3b99dc53c761d16ad3ca606c6}{set\+Log\+Level}} (int log\+Level)
+\begin{DoxyCompactList}\small\item\em This function is used to set the log level dynamically. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classCDP__BatteryLogger_a2b2ae4e5443dbed06131f1e938f3bec1}{get\+Log\+Level}} ()
+\begin{DoxyCompactList}\small\item\em This function is used to get the log level dynamically. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Battery Monitor Logging Class. 
+
+The class can be implemented to log into an xml file if required. Currently, it implements as stdout logging. The member functions can be overridden to class specific requirements. The logging can be compiled in debug mode (\+\_\+\+D\+E\+B\+UG) to retrieve debug logging. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCDP__BatteryLogger_a385f4e3f8ac6c43f8fcc5e3aacd07a7e}\label{classCDP__BatteryLogger_a385f4e3f8ac6c43f8fcc5e3aacd07a7e}} 
+\index{CDP\_BatteryLogger@{CDP\_BatteryLogger}!cdp\_dbg@{cdp\_dbg}}
+\index{cdp\_dbg@{cdp\_dbg}!CDP\_BatteryLogger@{CDP\_BatteryLogger}}
+\doxysubsubsection{\texorpdfstring{cdp\_dbg()}{cdp\_dbg()}}
+{\footnotesize\ttfamily template$<$typename ... Args$>$ \\
+C\+D\+P\+\_\+\+Battery\+Logger\+::cdp\+\_\+dbg (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used for debug level logging. 
+
+This function is used for error level logging.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCDP__BatteryLogger_a071d9e2720d336fd554bca12ba898c19}\label{classCDP__BatteryLogger_a071d9e2720d336fd554bca12ba898c19}} 
+\index{CDP\_BatteryLogger@{CDP\_BatteryLogger}!cdp\_info@{cdp\_info}}
+\index{cdp\_info@{cdp\_info}!CDP\_BatteryLogger@{CDP\_BatteryLogger}}
+\doxysubsubsection{\texorpdfstring{cdp\_info()}{cdp\_info()}}
+{\footnotesize\ttfamily template$<$typename ... Args$>$ \\
+C\+D\+P\+\_\+\+Battery\+Logger\+::cdp\+\_\+info (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This function is used for information level logging. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCDP__BatteryLogger_a2b2ae4e5443dbed06131f1e938f3bec1}\label{classCDP__BatteryLogger_a2b2ae4e5443dbed06131f1e938f3bec1}} 
+\index{CDP\_BatteryLogger@{CDP\_BatteryLogger}!getLogLevel@{getLogLevel}}
+\index{getLogLevel@{getLogLevel}!CDP\_BatteryLogger@{CDP\_BatteryLogger}}
+\doxysubsubsection{\texorpdfstring{getLogLevel()}{getLogLevel()}}
+{\footnotesize\ttfamily int C\+D\+P\+\_\+\+Battery\+Logger\+::get\+Log\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function is used to get the log level dynamically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCDP__BatteryLogger_a34c1fdf3b99dc53c761d16ad3ca606c6}\label{classCDP__BatteryLogger_a34c1fdf3b99dc53c761d16ad3ca606c6}} 
+\index{CDP\_BatteryLogger@{CDP\_BatteryLogger}!setLogLevel@{setLogLevel}}
+\index{setLogLevel@{setLogLevel}!CDP\_BatteryLogger@{CDP\_BatteryLogger}}
+\doxysubsubsection{\texorpdfstring{setLogLevel()}{setLogLevel()}}
+{\footnotesize\ttfamily void C\+D\+P\+\_\+\+Battery\+Logger\+::set\+Log\+Level (\begin{DoxyParamCaption}\item[{int}]{log\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function is used to set the log level dynamically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Level} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CDP__BatteryLogger_8h}{C\+D\+P\+\_\+\+Battery\+Logger.\+h}}\item 
+\mbox{\hyperlink{CDP__BatteryLogger_8cpp}{C\+D\+P\+\_\+\+Battery\+Logger.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,96 @@
+\hypertarget{classCDP__BatteryParser}{}\doxysection{C\+D\+P\+\_\+\+Battery\+Parser Class Reference}
+\label{classCDP__BatteryParser}\index{CDP\_BatteryParser@{CDP\_BatteryParser}}
+
+
+The Battery Packets Parsing Class.  
+
+
+
+
+{\ttfamily \#include $<$C\+D\+P\+\_\+\+Battery\+Parser.\+h$>$}
+
+
+
+Inheritance diagram for C\+D\+P\+\_\+\+Battery\+Parser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classCDP__BatteryParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+D\+P\+\_\+\+Battery\+Parser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classCDP__BatteryParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename ... Args$>$ }\\void \mbox{\hyperlink{classCDP__BatteryParser_aa7573f183517a06f7c1b56ff00a6845d}{cdp\+\_\+dbg}} (Args \&\&... args)
+\begin{DoxyCompactList}\small\item\em Class specific override for cdp\+\_\+dbg. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classCDP__BatteryParser_afd379d5241d7f09ce6d503d1b38553b1}{run}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em This function is used to execute the packet processing engine until end-\/of-\/file or any processing errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The Battery Packets Parsing Class. 
+
+This class is used to retrieve the data from a stream and check for packet type and errors. If no errors are found, it forwards the packet to the specialised packet processing class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCDP__BatteryParser_aa7573f183517a06f7c1b56ff00a6845d}\label{classCDP__BatteryParser_aa7573f183517a06f7c1b56ff00a6845d}} 
+\index{CDP\_BatteryParser@{CDP\_BatteryParser}!cdp\_dbg@{cdp\_dbg}}
+\index{cdp\_dbg@{cdp\_dbg}!CDP\_BatteryParser@{CDP\_BatteryParser}}
+\doxysubsubsection{\texorpdfstring{cdp\_dbg()}{cdp\_dbg()}}
+{\footnotesize\ttfamily template$<$typename ... Args$>$ \\
+C\+D\+P\+\_\+\+Battery\+Parser\+::cdp\+\_\+dbg (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Class specific override for cdp\+\_\+dbg. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCDP__BatteryParser_afd379d5241d7f09ce6d503d1b38553b1}\label{classCDP__BatteryParser_afd379d5241d7f09ce6d503d1b38553b1}} 
+\index{CDP\_BatteryParser@{CDP\_BatteryParser}!run@{run}}
+\index{run@{run}!CDP\_BatteryParser@{CDP\_BatteryParser}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void C\+D\+P\+\_\+\+Battery\+Parser\+::run (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function is used to execute the packet processing engine until end-\/of-\/file or any processing errors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CDP__BatteryParser_8h}{C\+D\+P\+\_\+\+Battery\+Parser.\+h}}\item 
+\mbox{\hyperlink{CDP__BatteryParser_8cpp}{C\+D\+P\+\_\+\+Battery\+Parser.\+cpp}}\end{DoxyCompactItemize}

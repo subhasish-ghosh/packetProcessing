@@ -1,0 +1,52 @@
+\hypertarget{CDP__Platform_8h}{}\doxysection{C\+D\+P\+\_\+\+Platform.\+h File Reference}
+\label{CDP__Platform_8h}\index{CDP\_Platform.h@{CDP\_Platform.h}}
+
+
+Generic Header for Windows or Linux based compilation.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$winsock2.\+h$>$}\newline
+{\ttfamily \#include $<$Base\+Tsd.\+h$>$}\newline
+Include dependency graph for C\+D\+P\+\_\+\+Platform.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CDP__Platform_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CDP__Platform_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{CDP__Platform_8h_aed66d78d05bbe887d37a9ccfc18be94e}\label{CDP__Platform_8h_aed66d78d05bbe887d37a9ccfc18be94e}} 
+\#define {\bfseries cdp\+\_\+ntohl}(a)~ntohl(a)
+\item 
+\mbox{\Hypertarget{CDP__Platform_8h_afb8dbd8a492e35f8e310fae965d587ce}\label{CDP__Platform_8h_afb8dbd8a492e35f8e310fae965d587ce}} 
+\#define {\bfseries cdp\+\_\+ntohll}(a)~ntohll(a)
+\item 
+\mbox{\Hypertarget{CDP__Platform_8h_aee7d508fd7bda55b21c814411bf8f338}\label{CDP__Platform_8h_aee7d508fd7bda55b21c814411bf8f338}} 
+\#define {\bfseries P\+A\+CK}(\+\_\+\+\_\+\+Declaration\+\_\+\+\_\+)~\+\_\+\+\_\+pragma( pack(push, 1) ) \+\_\+\+\_\+\+Declaration\+\_\+\+\_\+ \+\_\+\+\_\+pragma( pack(pop))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{CDP__Platform_8h_a894c4d58faeee7675b9e7e8244de1386}\label{CDP__Platform_8h_a894c4d58faeee7675b9e7e8244de1386}} 
+typedef S\+S\+I\+Z\+E\+\_\+T {\bfseries ssize\+\_\+t}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic Header for Windows or Linux based compilation. 
+
+\begin{DoxyAuthor}{Author}
+Subhasish Ghosh 
+\end{DoxyAuthor}

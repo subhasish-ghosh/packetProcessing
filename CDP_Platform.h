@@ -1,4 +1,8 @@
-
+/**
+* @file CDP_Platform.h
+* @brief Generic Header for Windows or Linux based compilation
+* @author Subhasish Ghosh
+*/
 #ifndef CODINGTEST_CDP_PLATFORM_H
 #define CODINGTEST_CDP_PLATFORM_H
 
@@ -7,10 +11,12 @@
 #include <chrono>
 
 #ifdef __GNUC__
+
 #include <netinet/in.h>
-#define cdp_ntohl(a)	be32toh(a)
-#define cdp_ntohll(a)	be64toh(a)
-#define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
+
+#define cdp_ntohl(a)    be32toh(a)
+#define cdp_ntohll(a)    be64toh(a)
+#define PACK(__Declaration__) __Declaration__ __attribute__((__packed__))
 #else
 #include <winsock2.h>
 #include <BaseTsd.h>

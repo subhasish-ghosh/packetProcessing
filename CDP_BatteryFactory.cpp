@@ -1,6 +1,8 @@
-//
-// Created by subhasish on 13/08/2020.
-//
+/**
+ * @file CDP_BatteryFactory.cpp
+ * @brief Battery Factory Class
+ * @author Subhasish Ghosh
+ */
 
 #include "CDP_BatteryFactory.h"
 
@@ -9,6 +11,7 @@ CDP_BatteryPackets *CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_Bat
     CDP_BatteryLogger log;
 
     try {
+        // Retrieve a specialised packet type specific object
         CDP_BatteryPackets *ObjPtr = getPacketObjMap.at(type)(type);
 
         if (nullptr != ObjPtr) {

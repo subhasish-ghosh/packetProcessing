@@ -1,0 +1,93 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Hierarchical Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Class Hierarchy}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{8}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Member Function Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}getPacketObj()}{8}{subsubsection.4.1.2.1}%
+\contentsline {section}{\numberline {4.2}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger Class Reference}{8}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{9}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{10}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}cdp\_dbg()}{10}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}cdp\_info()}{10}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}getLogLevel()}{11}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}setLogLevel()}{11}{subsubsection.4.2.2.4}%
+\contentsline {section}{\numberline {4.3}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Packets Class Reference}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{13}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Member Enumeration Documentation}{13}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}CDP\_BatteryPacketsType}{13}{subsubsection.4.3.2.1}%
+\contentsline {subsection}{\numberline {4.3.3}Member Function Documentation}{13}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}default\_PktHandler()}{13}{subsubsection.4.3.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}get\_dataLen()}{14}{subsubsection.4.3.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3.3}get\_error()}{14}{subsubsection.4.3.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.4}get\_name()}{15}{subsubsection.4.3.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.3.5}get\_type()}{15}{subsubsection.4.3.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.3.6}step()}{15}{subsubsection.4.3.3.6}%
+\contentsline {section}{\numberline {4.4}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser Class Reference}{16}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{17}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{17}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}cdp\_dbg()}{17}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}run()}{18}{subsubsection.4.4.2.2}%
+\contentsline {section}{\numberline {4.5}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Power Class Reference}{18}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{19}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Member Function Documentation}{20}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}cdp\_dbg()}{20}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {4.5.2.2}cdp\_info()}{20}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.3}get\_dataLen()}{21}{subsubsection.4.5.2.3}%
+\contentsline {subsubsection}{\numberline {4.5.2.4}get\_error()}{21}{subsubsection.4.5.2.4}%
+\contentsline {subsubsection}{\numberline {4.5.2.5}get\_name()}{21}{subsubsection.4.5.2.5}%
+\contentsline {subsubsection}{\numberline {4.5.2.6}get\_type()}{22}{subsubsection.4.5.2.6}%
+\contentsline {subsubsection}{\numberline {4.5.2.7}getObj()}{22}{subsubsection.4.5.2.7}%
+\contentsline {subsubsection}{\numberline {4.5.2.8}step()}{22}{subsubsection.4.5.2.8}%
+\contentsline {section}{\numberline {4.6}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status Class Reference}{23}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{24}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{25}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}cdp\_dbg()}{25}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}cdp\_info()}{25}{subsubsection.4.6.2.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.3}get\_dataLen()}{26}{subsubsection.4.6.2.3}%
+\contentsline {subsubsection}{\numberline {4.6.2.4}get\_error()}{26}{subsubsection.4.6.2.4}%
+\contentsline {subsubsection}{\numberline {4.6.2.5}get\_name()}{26}{subsubsection.4.6.2.5}%
+\contentsline {subsubsection}{\numberline {4.6.2.6}get\_type()}{27}{subsubsection.4.6.2.6}%
+\contentsline {subsubsection}{\numberline {4.6.2.7}getObj()}{27}{subsubsection.4.6.2.7}%
+\contentsline {subsubsection}{\numberline {4.6.2.8}step()}{27}{subsubsection.4.6.2.8}%
+\contentsline {chapter}{\numberline {5}File Documentation}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{29}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{29}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{30}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{31}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{31}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logger.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{31}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{32}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Monitor.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{32}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{33}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Function Documentation}{33}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}main()}{33}{subsubsection.5.5.2.1}%
+\contentsline {section}{\numberline {5.6}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Packets.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{33}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{34}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Variable Documentation}{34}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}getPacketObjMap}{34}{subsubsection.5.6.2.1}%
+\contentsline {section}{\numberline {5.7}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Packets.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{35}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{36}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Variable Documentation}{36}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}getPacketObjMap}{36}{subsubsection.5.7.2.1}%
+\contentsline {section}{\numberline {5.8}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{36}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{37}{subsection.5.8.1}%
+\contentsline {section}{\numberline {5.9}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Parser.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{37}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{38}{subsection.5.9.1}%
+\contentsline {section}{\numberline {5.10}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Power.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{39}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{39}{subsection.5.10.1}%
+\contentsline {section}{\numberline {5.11}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Power.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{39}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{40}{subsection.5.11.1}%
+\contentsline {section}{\numberline {5.12}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}cpp File Reference}{41}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{41}{subsection.5.12.1}%
+\contentsline {section}{\numberline {5.13}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Battery\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Status.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{41}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{42}{subsection.5.13.1}%
+\contentsline {section}{\numberline {5.14}C\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}D\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Platform.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{43}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{43}{subsection.5.14.1}%
+\contentsline {chapter}{Index}{45}{section*.63}%

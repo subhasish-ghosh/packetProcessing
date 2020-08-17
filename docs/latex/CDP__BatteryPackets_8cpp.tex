@@ -1,0 +1,62 @@
+\hypertarget{CDP__BatteryPackets_8cpp}{}\doxysection{C\+D\+P\+\_\+\+Battery\+Packets.\+cpp File Reference}
+\label{CDP__BatteryPackets_8cpp}\index{CDP\_BatteryPackets.cpp@{CDP\_BatteryPackets.cpp}}
+
+
+Battery Packet Class.  
+
+
+{\ttfamily \#include \char`\"{}C\+D\+P\+\_\+\+Battery\+Packets.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+D\+P\+\_\+\+Battery\+Power.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+D\+P\+\_\+\+Battery\+Status.\+h\char`\"{}}\newline
+Include dependency graph for C\+D\+P\+\_\+\+Battery\+Packets.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{CDP__BatteryPackets_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ C\+D\+P\+\_\+\+Battery\+Packets\+::\+C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t, \mbox{\hyperlink{classCDP__BatteryPackets_a0c1d6025cba83e5b5e00abef5f4012eb}{C\+D\+P\+\_\+\+Battery\+Packets\+::get\+Packet\+Obj\+Func\+Ptr\+\_\+t}} $>$ \mbox{\hyperlink{CDP__BatteryPackets_8cpp_ae208aa49d6e83a95a03b6e3ddf450c44}{get\+Packet\+Obj\+Map}}
+\begin{DoxyCompactList}\small\item\em This map contains entries for specialised packet processing classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Battery Packet Class. 
+
+\begin{DoxyAuthor}{Author}
+Subhasish Ghosh 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{CDP__BatteryPackets_8cpp_ae208aa49d6e83a95a03b6e3ddf450c44}\label{CDP__BatteryPackets_8cpp_ae208aa49d6e83a95a03b6e3ddf450c44}} 
+\index{CDP\_BatteryPackets.cpp@{CDP\_BatteryPackets.cpp}!getPacketObjMap@{getPacketObjMap}}
+\index{getPacketObjMap@{getPacketObjMap}!CDP\_BatteryPackets.cpp@{CDP\_BatteryPackets.cpp}}
+\doxysubsubsection{\texorpdfstring{getPacketObjMap}{getPacketObjMap}}
+{\footnotesize\ttfamily get\+Packet\+Obj\+Map}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{        std::make\_pair(CDP\_BatteryPackets::CDP\_BatteryPacketsType::CDP\_PACKETSTYPE\_BATTERYPOWER,}
+\DoxyCodeLine{                       \mbox{\hyperlink{classCDP__BatteryPower_a3cb2e74fd5e49b39cb0d132c4382628b}{CDP\_BatteryPower::getObj}}),}
+\DoxyCodeLine{        std::make\_pair(CDP\_BatteryPackets::CDP\_BatteryPacketsType::CDP\_PACKETSTYPE\_BATTERYSTATUS,}
+\DoxyCodeLine{                       \mbox{\hyperlink{classCDP__BatteryStatus_a8ba5bd2295aca6279c2b886dabeb5889}{CDP\_BatteryStatus::getObj}}),}
+\DoxyCodeLine{}
+\DoxyCodeLine{        std::make\_pair(CDP\_BatteryPackets::CDP\_BatteryPacketsType::CDP\_PACKETTYPE\_MAX,}
+\DoxyCodeLine{                       \mbox{\hyperlink{classCDP__BatteryPackets_ac83c663dd4f7bbf770fe0d55b42629eb}{CDP\_BatteryPackets::default\_PktHandler}}) }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+This map contains entries for specialised packet processing classes. 
+
+The map is of the form $<$C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t, get\+Packet\+Obj\+Func\+Ptr\+\_\+t$>$. The function pointer is used to retrieve a specialised packet processing object. Add a new entry here for newly added packet types and implement the class get\+Obj. To add a new packet processing engine\+:
+\begin{DoxyEnumerate}
+\item Define a new Packet Type in \mbox{\hyperlink{CDP__BatteryPackets_8h}{C\+D\+P\+\_\+\+Battery\+Packets.\+h}}
+\item Define a Packet Processing Class (refer\+: \mbox{\hyperlink{CDP__BatteryStatus_8h}{C\+D\+P\+\_\+\+Battery\+Status.\+h}}/cpp as an example)
+\item Add the class entry in the array get\+Packet\+Obj\+Map (found in \mbox{\hyperlink{CDP__BatteryPackets_8cpp}{C\+D\+P\+\_\+\+Battery\+Packets.\+cpp}}) 
+\end{DoxyEnumerate}

@@ -1,12 +1,14 @@
-//
-// Created by subhasish on 13/08/2020.
-//
-
+/**
+ * @file CDP_BatteryPower.cpp
+ * @brief Battery Power Class
+ * @author Subhasish Ghosh
+ */
 #include "CDP_BatteryPower.h"
 
 void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
     try {
+        // extract packet data
         format = (CDP_PacketFormat_t *) (&data[0]);
         format->time = cdp_ntohl(format->time);
         format->volt = cdp_ntohl(format->volt);
@@ -29,6 +31,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
         uint64_t mWatt = format->current * format->volt;
 
+        // local variable to store current time and state
         static std::pair currPowerState = std::make_pair<uint32_t, uint32_t>(0, 0);
         currPowerState.second = 0;
         currPowerState.first = format->time;
@@ -48,11 +51,12 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
         }
 
         /* Check Debounce */
-        if(currPowerState.second != prevPowerStateCommit.second) {
-            if(currPowerState.second != prevPowerStateDBounce.second) {
+        if (currPowerState.second != prevPowerStateCommit.second) {
+            if (currPowerState.second != prevPowerStateDBounce.second) {
                 prevPowerStateDBounce = currPowerState;
             } else {
-                if (abs(static_cast<int32_t>(currPowerState.first - prevPowerStateDBounce.first)) >= CDP_BATTERYPOWER_DEBOUNCE_MS) {
+                if (abs(static_cast<int32_t>(currPowerState.first - prevPowerStateDBounce.first)) >=
+                    CDP_BATTERYPOWER_DEBOUNCE_MS) {
                     currPowerStateCommit = prevPowerStateDBounce;
                 }
             }
@@ -74,7 +78,8 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
 
             /* If state transition is illegal, then ignore */
             if (itrState >= stateTable.size()) {
-                cdp_err("Invalid power state transition<", prevPowerStateCommit.second, '-', currPowerStateCommit.second, ">",
+                cdp_err("Invalid power state transition<", prevPowerStateCommit.second, '-',
+                        currPowerStateCommit.second, ">",
                         "..Ignoring");
                 currPowerStateCommit = prevPowerStateCommit;
                 stateErrorDetected = true;

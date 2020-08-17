@@ -1,0 +1,222 @@
+\hypertarget{classCDP__BatteryPackets}{}\doxysection{C\+D\+P\+\_\+\+Battery\+Packets Class Reference}
+\label{classCDP__BatteryPackets}\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+
+
+The Battery Packets Processing Class.  
+
+
+
+
+{\ttfamily \#include $<$C\+D\+P\+\_\+\+Battery\+Packets.\+h$>$}
+
+
+
+Inheritance diagram for C\+D\+P\+\_\+\+Battery\+Packets\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classCDP__BatteryPackets__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+D\+P\+\_\+\+Battery\+Packets\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classCDP__BatteryPackets__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classCDP__BatteryPackets_a2d2d06e32a6e0d617f9076941b91f801}{C\+D\+P\+\_\+\+Battery\+Packets\+Type}} \+: uint8\+\_\+t \{ {\bfseries C\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+T\+Y\+P\+E\+\_\+\+M\+IN}, 
+{\bfseries C\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+S\+T\+Y\+P\+E\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+P\+O\+W\+ER} = C\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+T\+Y\+P\+E\+\_\+\+M\+IN, 
+{\bfseries C\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+S\+T\+Y\+P\+E\+\_\+\+B\+A\+T\+T\+E\+R\+Y\+S\+T\+A\+T\+US}, 
+{\bfseries C\+D\+P\+\_\+\+P\+A\+C\+K\+E\+T\+T\+Y\+P\+E\+\_\+\+M\+AX}
+ \}
+\begin{DoxyCompactList}\small\item\em Use this enum to add new packet processing class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCDP__BatteryPackets_a6336bbba5b2f5b8a5b10e4ca00b2d984}\label{classCDP__BatteryPackets_a6336bbba5b2f5b8a5b10e4ca00b2d984}} 
+typedef enum \mbox{\hyperlink{classCDP__BatteryPackets_a2d2d06e32a6e0d617f9076941b91f801}{C\+D\+P\+\_\+\+Battery\+Packets\+::\+C\+D\+P\+\_\+\+Battery\+Packets\+Type}} {\bfseries C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t}
+\item 
+\mbox{\Hypertarget{classCDP__BatteryPackets_a0c1d6025cba83e5b5e00abef5f4012eb}\label{classCDP__BatteryPackets_a0c1d6025cba83e5b5e00abef5f4012eb}} 
+typedef \mbox{\hyperlink{classCDP__BatteryPackets}{C\+D\+P\+\_\+\+Battery\+Packets}} $\ast$($\ast$ \mbox{\hyperlink{classCDP__BatteryPackets_a0c1d6025cba83e5b5e00abef5f4012eb}{get\+Packet\+Obj\+Func\+Ptr\+\_\+t}}) (C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em Function Pointer typedef to handle packet specific object allocation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classCDP__BatteryPackets_a05e4864393cb35118103eac531196df1}{step}} (std\+::vector$<$ uint8\+\_\+t $>$ \&)=0
+\begin{DoxyCompactList}\small\item\em This function is used to cycle the class state machine once. \end{DoxyCompactList}\item 
+virtual C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t \mbox{\hyperlink{classCDP__BatteryPackets_a3917fa9c9c24faaa6ed37a2f5154a961}{get\+\_\+type}} (void)=0
+\begin{DoxyCompactList}\small\item\em This function is used to retrieve the packet type of the class. \end{DoxyCompactList}\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classCDP__BatteryPackets_a9f59033060b53a25857a9383ca38f42a}{get\+\_\+data\+Len}} (void)=0
+\begin{DoxyCompactList}\small\item\em This function is used to retrieve the data pkt len of the class. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classCDP__BatteryPackets_a28acb9a8b7c28a825f2ff0669901c15a}{get\+\_\+name}} (void)=0
+\begin{DoxyCompactList}\small\item\em This function is used to retrieve the data name of the class. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCDP__BatteryPackets_a38b6ec8b89011f7660446017b9a944b4}{get\+\_\+error}} (void)=0
+\begin{DoxyCompactList}\small\item\em This function is used to retrieve the error occurred in the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classCDP__BatteryPackets}{C\+D\+P\+\_\+\+Battery\+Packets}} $\ast$ \mbox{\hyperlink{classCDP__BatteryPackets_ac83c663dd4f7bbf770fe0d55b42629eb}{default\+\_\+\+Pkt\+Handler}} (C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em This is an default function for error handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The Battery Packets Processing Class. 
+
+This class is used to retrieve specialised packet processing object To add a new packet processing engine\+:
+\begin{DoxyEnumerate}
+\item Define a new Packet Type in \mbox{\hyperlink{CDP__BatteryPackets_8h}{C\+D\+P\+\_\+\+Battery\+Packets.\+h}}
+\item Define a Packet Processing Class (refer\+: \mbox{\hyperlink{CDP__BatteryStatus_8h}{C\+D\+P\+\_\+\+Battery\+Status.\+h}}/cpp as an example)
+\item Add the class entry in the array get\+Packet\+Obj\+Map (found in \mbox{\hyperlink{CDP__BatteryPackets_8cpp}{C\+D\+P\+\_\+\+Battery\+Packets.\+cpp}}) 
+\end{DoxyEnumerate}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classCDP__BatteryPackets_a2d2d06e32a6e0d617f9076941b91f801}\label{classCDP__BatteryPackets_a2d2d06e32a6e0d617f9076941b91f801}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!CDP\_BatteryPacketsType@{CDP\_BatteryPacketsType}}
+\index{CDP\_BatteryPacketsType@{CDP\_BatteryPacketsType}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{CDP\_BatteryPacketsType}{CDP\_BatteryPacketsType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classCDP__BatteryPackets_a2d2d06e32a6e0d617f9076941b91f801}{C\+D\+P\+\_\+\+Battery\+Packets\+::\+C\+D\+P\+\_\+\+Battery\+Packets\+Type}} \+: uint8\+\_\+t}
+
+
+
+Use this enum to add new packet processing class. 
+
+Ensure no duplicate packet types are present. Preserve the Min \& Max enums i.\+e add new types between the Min and Max packet types. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCDP__BatteryPackets_ac83c663dd4f7bbf770fe0d55b42629eb}\label{classCDP__BatteryPackets_ac83c663dd4f7bbf770fe0d55b42629eb}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!default\_PktHandler@{default\_PktHandler}}
+\index{default\_PktHandler@{default\_PktHandler}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{default\_PktHandler()}{default\_PktHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCDP__BatteryPackets}{C\+D\+P\+\_\+\+Battery\+Packets}} $\ast$ C\+D\+P\+\_\+\+Battery\+Packets\+::default\+\_\+\+Pkt\+Handler (\begin{DoxyParamCaption}\item[{C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This is an default function for error handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+C\+D\+P\+\_\+\+Battery\+Packets$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCDP__BatteryPackets_a9f59033060b53a25857a9383ca38f42a}\label{classCDP__BatteryPackets_a9f59033060b53a25857a9383ca38f42a}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!get\_dataLen@{get\_dataLen}}
+\index{get\_dataLen@{get\_dataLen}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{get\_dataLen()}{get\_dataLen()}}
+{\footnotesize\ttfamily ssize\+\_\+t C\+D\+P\+\_\+\+Battery\+Packets\+::get\+\_\+data\+Len (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function is used to retrieve the data pkt len of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ssize\+\_\+t 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCDP__BatteryPower_a5e71cfb4614318dd0f66b979ca3ff4b2}{C\+D\+P\+\_\+\+Battery\+Power}}, and \mbox{\hyperlink{classCDP__BatteryStatus_ad7bdbb6e5a71167e45c779ccd983043f}{C\+D\+P\+\_\+\+Battery\+Status}}.
+
+\mbox{\Hypertarget{classCDP__BatteryPackets_a38b6ec8b89011f7660446017b9a944b4}\label{classCDP__BatteryPackets_a38b6ec8b89011f7660446017b9a944b4}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!get\_error@{get\_error}}
+\index{get\_error@{get\_error}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{get\_error()}{get\_error()}}
+{\footnotesize\ttfamily bool C\+D\+P\+\_\+\+Battery\+Packets\+::get\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function is used to retrieve the error occurred in the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCDP__BatteryPower_af93584a9b2237ed053f50ca30ce1ef58}{C\+D\+P\+\_\+\+Battery\+Power}}, and \mbox{\hyperlink{classCDP__BatteryStatus_ace9ec8ce25fefc739be25047e09b80a4}{C\+D\+P\+\_\+\+Battery\+Status}}.
+
+\mbox{\Hypertarget{classCDP__BatteryPackets_a28acb9a8b7c28a825f2ff0669901c15a}\label{classCDP__BatteryPackets_a28acb9a8b7c28a825f2ff0669901c15a}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily std\+::string C\+D\+P\+\_\+\+Battery\+Packets\+::get\+\_\+name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function is used to retrieve the data name of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCDP__BatteryPower_a8aaa64b3224632f3c88217490c2221ad}{C\+D\+P\+\_\+\+Battery\+Power}}, and \mbox{\hyperlink{classCDP__BatteryStatus_a29454b30330b8833021c5fd2e3097ea9}{C\+D\+P\+\_\+\+Battery\+Status}}.
+
+\mbox{\Hypertarget{classCDP__BatteryPackets_a3917fa9c9c24faaa6ed37a2f5154a961}\label{classCDP__BatteryPackets_a3917fa9c9c24faaa6ed37a2f5154a961}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t C\+D\+P\+\_\+\+Battery\+Packets\+::get\+\_\+type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function is used to retrieve the packet type of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+C\+D\+P\+\_\+\+Battery\+Packets\+Type\+\_\+t 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCDP__BatteryPower_a4fea1a3d0452d1e00c009b11c98dc680}{C\+D\+P\+\_\+\+Battery\+Power}}, and \mbox{\hyperlink{classCDP__BatteryStatus_a019d72da97c2b267840fca64487513a2}{C\+D\+P\+\_\+\+Battery\+Status}}.
+
+\mbox{\Hypertarget{classCDP__BatteryPackets_a05e4864393cb35118103eac531196df1}\label{classCDP__BatteryPackets_a05e4864393cb35118103eac531196df1}} 
+\index{CDP\_BatteryPackets@{CDP\_BatteryPackets}!step@{step}}
+\index{step@{step}!CDP\_BatteryPackets@{CDP\_BatteryPackets}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily C\+D\+P\+\_\+\+Battery\+Packets\+::step (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This function is used to cycle the class state machine once. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & packet to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCDP__BatteryPower_adf0ddf77d6d9eb69f6a94dedfeb73267}{C\+D\+P\+\_\+\+Battery\+Power}}, and \mbox{\hyperlink{classCDP__BatteryStatus_a9434401c2a44de681178b6ff12ab5247}{C\+D\+P\+\_\+\+Battery\+Status}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{CDP__BatteryPackets_8h}{C\+D\+P\+\_\+\+Battery\+Packets.\+h}}\item 
+\mbox{\hyperlink{CDP__BatteryPackets_8cpp}{C\+D\+P\+\_\+\+Battery\+Packets.\+cpp}}\end{DoxyCompactItemize}

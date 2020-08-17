@@ -1,6 +1,8 @@
-//
-// Created by subhasish on 03/08/2020.
-//
+/**
+ * @file CDP_BatteryParser.cpp
+ * @brief Battery Parser Class
+ * @author Subhasish Ghosh
+ */
 
 #include "CDP_BatteryParser.h"
 #include "CDP_BatteryPackets.h"
@@ -11,6 +13,7 @@ void CDP_BatteryParser::run(const std::string &fileName) {
     std::ifstream fp;
 
     try {
+        // Open the given file
         fp.exceptions(std::ifstream::failbit | std::ifstream::badbit);
         fp.open(fileName.c_str(), std::ios::binary);
     } catch (std::exception &e) {
@@ -30,10 +33,11 @@ void CDP_BatteryParser::run(const std::string &fileName) {
 
             data.clear();
 
+            // read first packet type
             fp.read(reinterpret_cast<char *> (&typePkt), sizeof(uint8_t));
 
             if (typePkt >= CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX) {
-                throw("Invalid Packet Type");
+                throw ("Invalid Packet Type");
             }
 
             /* Call specific packet type processor */
@@ -79,18 +83,24 @@ void CDP_BatteryParser::run(const std::string &fileName) {
                 throw ("Bad Battery Object");
             }
 
+            // execute the packet type specific step function.
             batObj->step(data);
         }
-        for(uint8_t iterTypes = 0; iterTypes < CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX; iterTypes++) {
-            CDP_BatteryPackets* batObjErr = CDP_BatteryFactory::getPacketObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t(iterTypes));
 
-            if(nullptr != batObjErr) {
-                if(batObjErr->get_error()) {
-                    obj.cdp_err(batObjErr->get_name(), ": Warning: System Errors Detected!!. System state data unreliable");
+        // Check if any of the packet processing classes has errors
+        for (uint8_t iterTypes = 0;
+             iterTypes < CDP_BatteryPackets::CDP_BatteryPacketsType::CDP_PACKETTYPE_MAX; iterTypes++) {
+            CDP_BatteryPackets *batObjErr = CDP_BatteryFactory::getPacketObj(
+                    CDP_BatteryPackets::CDP_BatteryPacketsType_t(iterTypes));
+
+            if (nullptr != batObjErr) {
+                if (batObjErr->get_error()) {
+                    obj.cdp_err(batObjErr->get_name(),
+                                ": Warning: System Errors Detected!!. System state data unreliable");
                 }
             }
         }
-    } catch (const char* str) {
+    } catch (const char *str) {
         obj.cdp_err("CDP_BatteryParser: ", str);
         throw;
     } catch (std::exception &e) {

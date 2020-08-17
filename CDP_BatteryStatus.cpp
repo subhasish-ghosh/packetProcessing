@@ -1,28 +1,32 @@
-//
-// Created by subhasish on 13/08/2020.
-//
+/**
+ * @file CDP_BatteryStatus.cpp
+ * @brief Battery Status Class
+ * @author Subhasish Ghosh
+ */
 
 #include "CDP_BatteryStatus.h"
 
 void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
+
     try {
+        // extract packet data
         format = (CDP_PacketFormat_t *) (&data[0]);
         format->time = cdp_ntohl(format->time);
 
         cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
 
         if (format->battStatus >= strbattStatus.size()) {
-            cdp_err("Invalid Battery Status Received <", uint32_t(format->battStatus),"> ..ignoring");
+            cdp_err("Invalid Battery Status Received <", uint32_t(format->battStatus), "> ..ignoring");
             stateErrorDetected = true;
             return;
         }
 
         cdp_info(std::chrono::duration_cast<std::chrono::seconds>(std::chrono::milliseconds(format->time)).count(), ";",
                  strbattStatus[format->battStatus]);
-    } catch(std::exception &e) {
+    } catch (std::exception &e) {
         cdp_err("CDP_BatteryStatus::step ", e.what());
         throw;
-    } catch(...) {
+    } catch (...) {
         cdp_err("CDP_BatteryStatus::step failed due to unknown reasons");
         throw;
     }
@@ -43,6 +47,7 @@ ssize_t CDP_BatteryStatus::get_dataLen(void) {
 CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPacketsType_t &typelocal) {
     CDP_BatteryLogger log;
     try {
+
         if (type == typelocal) {
             if (false == objInit) {
                 cdpBatteryStatus = new CDP_BatteryStatus();
@@ -54,10 +59,10 @@ CDP_BatteryPackets *CDP_BatteryStatus::getObj(CDP_BatteryPackets::CDP_BatteryPac
         } else {
             return nullptr;
         }
-    } catch(std::exception &e) {
+    } catch (std::exception &e) {
         log.cdp_err("CDP_BatteryStatus::getObj ", e.what());
         throw;
-    } catch(...) {
+    } catch (...) {
         log.cdp_err("CDP_BatteryStatus::getObj failed due to unknown reasons");
         throw;
     }

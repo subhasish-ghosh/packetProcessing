@@ -18,10 +18,6 @@ CDP_BatteryPower.h
 CDP_BatteryStatus.h
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryStatus.h
 
-/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryLogger.cpp
-CDP_BatteryLogger.h
-/mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryLogger.h
-
 /mnt/d/subhasish/Southampton_MSc_Data/careers/cdp/CodingTest/CDP_BatteryLogger.h
 cstdarg
 -
