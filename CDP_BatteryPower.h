@@ -77,5 +77,6 @@ private:
     CDP_BatteryPower &operator=(const CDP_BatteryPower &);
 };
 
+#define CDP_BATTERYPOWER_DEBOUNCE_MS    10
 
 #endif //CODINGTEST_CDP_BATTERYPOWER_H

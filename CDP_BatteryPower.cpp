@@ -52,7 +52,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
             if(currPowerState.second != prevPowerStateDBounce.second) {
                 prevPowerStateDBounce = currPowerState;
             } else {
-                if ((currPowerState.first - prevPowerStateDBounce.first) >= 10) {
+                if (abs(static_cast<int32_t>(currPowerState.first - prevPowerStateDBounce.first)) >= CDP_BATTERYPOWER_DEBOUNCE_MS) {
                     currPowerStateCommit = prevPowerStateDBounce;
                 }
             }
@@ -76,6 +76,7 @@ void CDP_BatteryPower::step(std::vector<uint8_t> &data) {
             if (itrState >= stateTable.size()) {
                 cdp_err("Invalid power state transition<", prevPowerStateCommit.second, '-', currPowerStateCommit.second, ">",
                         "..Ignoring");
+                currPowerStateCommit = prevPowerStateCommit;
                 stateErrorDetected = true;
                 return;
             }

@@ -12,7 +12,7 @@ void CDP_BatteryStatus::step(std::vector<uint8_t> &data) {
         cdp_dbg("time: ", uint32_t(format->time), " status: ", uint32_t(format->battStatus));
 
         if (format->battStatus >= strbattStatus.size()) {
-            cdp_err("Invalid Battery Status Received <", format->battStatus,"> ..ignoring");
+            cdp_err("Invalid Battery Status Received <", uint32_t(format->battStatus),"> ..ignoring");
             stateErrorDetected = true;
             return;
         }
