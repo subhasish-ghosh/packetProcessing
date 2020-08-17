@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Project exclude paths
+#/cmake-build-debug/
+.idea/
+
 # User-specific files
 *.rsuser
 *.suo
